@@ -1,0 +1,25 @@
+#include<stdio.h>
+
+int acker(int m, int n)
+{
+    if(m==0)
+        return n=n+1;
+    else if(m!=0 && n==0)
+        return acker(m-1,1);
+    else if(m!=0 && n!=0)
+        return acker(m-1,acker(m,n-1));
+}
+
+void main()
+{
+    int m,n,result;
+    
+    printf("enter the value of m\n");
+    scanf("%d",&m);
+    printf("enter the value of n\n");
+    scanf("%d",&n);
+    
+    result=acker(m,n);
+
+    printf("A(%d,%d) = %d",m,n,result);
+}
